@@ -188,7 +188,7 @@
           <!-- 댓글 작성창-->
           <div class="board_reply_insert">
             <dl>
-              <dt>닉네임</dt>
+              <dt>닉네임dddddd</dt>
               <dd><span>취소</span><span @click="replyInsert">등록</span></dd>
             </dl>
             <dl>
