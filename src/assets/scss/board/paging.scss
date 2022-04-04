@@ -1,0 +1,38 @@
+// TODO 페이징 기능 추가 후 작성 예정
+.board_page {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.board_page a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-left: 0;
+    vertical-align: middle;
+    // line-height: 100%;
+}
+
+.board_page a.bt {
+    // padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+.board_page a.num {
+    // padding-top: 9px;
+    font-size: 1.4rem;
+}
+
+.board_page a.num.on {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+}
+
+.board_page a:first-child {
+    border-left: 1px solid #ddd;
+}
+

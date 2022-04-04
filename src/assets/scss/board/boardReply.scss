@@ -1,0 +1,483 @@
+$border-color: #999;
+$border-color-update: red;
+// 타이틀
+.board_reply_title {
+  padding-left: 15px;
+  margin-bottom: 15px;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+// 댓글 영역
+.board_reply_wrap {
+  width: 100%;
+}
+
+// 댓글
+.board_reply {
+  width: 100%;
+
+  .board_reply_info {
+    padding: 15px;
+    border: 2px solid $border-color;
+    margin-bottom: 15px;
+    width: 95%;
+    float: right;
+
+    dl {
+      // position: relative; //요거
+      // display: inline-block;
+      padding-left: 0;
+    }
+
+    dl:first-child {
+      font-weight: bold;
+
+      dd {
+        float: right;
+        padding-right: 15px;
+
+        a {
+          padding-right: 15px;
+        }
+
+        a:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    dd:first-child {
+      margin-left: 1;
+    }
+
+    dl:last-child {
+      border-bottom: 1px solid $border-color;
+      font-size: 0.5rem;
+      color: gray;
+    }
+
+    dd:last-child {
+      margin-left: 5px;
+    }
+    dl dt,
+    dl dd {
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// 답글작성
+.board_reply {
+  .board_reply_insert {
+    float: right;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid $border-color;
+    margin-bottom: 15px;
+
+    textarea {
+      width: 100%;
+      min-height: 60px;
+    }
+
+    dl {
+      position: relative;
+      // display: inline-block;
+      padding-left: 0;
+    }
+    dl:first-child {
+      font-weight: bold;
+    }
+
+    dl:first-child dd {
+      float: right;
+      padding-right: 15px;
+    }
+    dl:first-child dt {
+      display: inline-block;
+      font-size: 1.2rem;
+    }
+    dl:first-child dt {
+      display: inline-block;
+      font-size: 1.2rem;
+    }
+    dl:first-child dd span {
+      font-size: 0.9rem;
+      padding-right: 15px;
+    }
+  }
+}
+
+// 대댓 css
+// @mixin width($size) {
+//     width: $size;
+// }
+
+// 기존에 board_reply_info_re_1~5 까지 css에 각각 선언 해두고 사용했는데
+// for문 사용으로 2~5 까지는 주석 처리할 수 있었음
+// https://bythem.net/2021/04/23/sassscss-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC/
+// .board_reply {
+//   @for $i from 1 to 5 {
+//     .board_reply_info_re#{$i} {
+//       padding: 15px;
+//       border: 2px solid $border-color;
+//       margin-bottom: 15px;
+//       // 연산자 사용 i = depth level을 의미함
+//       width: calc(95% - ($i * 5));
+//       float: right;
+//       dl {
+//         position: relative;
+//         padding-left: 0;
+//       }
+//       dl:first-child {
+//         font-weight: bold;
+//       }
+//       dl:first-child dd {
+//         float: right;
+//         padding-right: 15px;
+//       }
+//       dl:first-child dd a {
+//         padding-right: 15px;
+//       }
+//       dd a:last-child {
+//         padding-right: 0;
+//       }
+//       dd:first-child {
+//         margin-left: 1;
+//       }
+//       dl:last-child {
+//         // z
+//         border-bottom: 1px solid #999;
+//         font-size: 0.5rem;
+//         color: gray;
+//       }
+//       dd:last-child {
+//         margin-left: 5px;
+//       }
+//       dl dt,
+//       dl dd {
+//         display: inline-block;
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }
+// }
+
+// 대댓 답글작성
+.board_reply {
+  .board_reply_insert_re {
+    width: 95%;
+    float: right;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid $border-color;
+    margin-bottom: 15px;
+
+    textarea {
+      width: 100%;
+      min-height: 60px;
+    }
+    dl {
+      position: relative;
+      // display: inline-block;
+      padding-left: 0;
+    }
+    dl:first-child {
+      font-weight: bold;
+    }
+    dl:first-child dd {
+      float: right;
+      padding-right: 15px;
+    }
+    dl:first-child dt {
+      display: inline-block;
+      font-size: 1.2rem;
+    }
+    dl:first-child dd span {
+      font-size: 0.9rem;
+      padding-right: 15px;
+    }
+  }
+}
+
+// 댓글 수정
+.board_reply {
+  .board_reply_update {
+    float: right;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid $border-color-update;
+    margin-bottom: 15px;
+    //   font-size: 0;
+    textarea {
+      width: 100%;
+      min-height: 60px;
+    }
+    dl {
+      position: relative;
+      // display: inline-block;
+      padding-left: 0;
+    }
+    dl:first-child {
+      font-weight: bold;
+    }
+    dl:first-child dd {
+      float: right;
+      padding-right: 15px;
+    }
+    dl:first-child dt {
+      display: inline-block;
+      font-size: 1.2rem;
+    }
+    dl:first-child dd span {
+      font-size: 0.9rem;
+      padding-right: 15px;
+    }
+  }
+}
+
+// // 대댓 css
+.board_reply .board_reply_info_re1 {
+  padding: 15px;
+  border: 2px solid $border-color;
+  margin-bottom: 15px;
+  //   font-size: 0;
+  width: 90%;
+  float: right;
+}
+
+.board_reply .board_reply_info_re1 dl {
+  position: relative;
+  // display: inline-block;
+  padding-left: 0;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child {
+  font-weight: bold;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child dd {
+  float: right;
+  padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child dd a {
+  padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child {
+  padding-right: 0;
+}
+
+.board_reply .board_reply_info_re1 dd:first-child {
+  margin-left: 1;
+}
+
+.board_reply .board_reply_info_re1 dl:last-child {
+  border-bottom: 1px solid $border-color;
+  font-size: 0.5rem;
+  color: gray;
+}
+
+.board_reply .board_reply_info_re1 dd:last-child {
+  margin-left: 5px;
+}
+.board_reply .board_reply_info_re1 dl dt,
+.board_reply .board_reply_info_re1 dl dd {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+// 대댓 css
+.board_reply .board_reply_info_re2 {
+  padding: 15px;
+  border: 2px solid $border-color;
+  margin-bottom: 15px;
+  //   font-size: 0;
+  width: 85%;
+  float: right;
+}
+
+.board_reply .board_reply_info_re2 dl {
+  position: relative;
+  // display: inline-block;
+  padding-left: 0;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child {
+  font-weight: bold;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child dd {
+  float: right;
+  padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child dd a {
+  padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child {
+  padding-right: 0;
+}
+
+.board_reply .board_reply_info_re2 dd:first-child {
+  margin-left: 1;
+}
+
+.board_reply .board_reply_info_re2 dl:last-child {
+  border-bottom: 1px solid $border-color;
+  font-size: 0.5rem;
+  color: gray;
+}
+
+.board_reply .board_reply_info_re2 dd:last-child {
+  margin-left: 5px;
+}
+.board_reply .board_reply_info_re2 dl dt,
+.board_reply .board_reply_info_re2 dl dd {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+// 대댓 css
+.board_reply .board_reply_info_re3 {
+  padding: 15px;
+  border: 2px solid $border-color;
+  margin-bottom: 15px;
+  //   font-size: 0;
+  width: 80%;
+  float: right;
+}
+
+.board_reply .board_reply_info_re3 dl {
+  position: relative;
+  // display: inline-block;
+  padding-left: 0;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child {
+  font-weight: bold;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child dd {
+  float: right;
+  padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child dd a {
+  padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child {
+  padding-right: 0;
+}
+
+.board_reply .board_reply_info_re3 dd:first-child {
+  margin-left: 1;
+}
+
+.board_reply .board_reply_info_re3 dl:last-child {
+  border-bottom: 1px solid $border-color;
+  font-size: 0.5rem;
+  color: gray;
+}
+
+.board_reply .board_reply_info_re3 dd:last-child {
+  margin-left: 5px;
+}
+.board_reply .board_reply_info_re3 dl dt,
+.board_reply .board_reply_info_re3 dl dd {
+  display: inline-block;
+  font-size: 0.9rem;
+} 
+
+// scss 정리
+// Sassy CSS(멋진 CSS)의 줄인말이라고한다.
+// scss란 css 전처리기 중 하나 인 sass의 3버전에 등장한 언어이다.
+// 전처리기의 종류 Sass(scss), Less, Stylus
+// css와 비슷한 구문을 가지고 있으머 css에는 없는 새로운 구문을
+// 도입한 css의 상위 호환 스타일 시트이다.
+// 웹에서는 직접 동작하지 않고 코드로 작성한 scss를 웹에서 동작가능한
+// 표준의 css로 컴파일하여 화면에 보여지게 된다.
+
+// sass와 scss의 문법적인 차이는 sass는 괄호와 세미콜론이 생략된다.
+
+// scss의 특징으로는
+
+// 1. 스타일에 변수를 할당할 수 있다.
+
+// $red: #red
+
+// .test {
+//     color: $red;
+// }
+
+// 이런식으로 변수를 할당하면 나중에 색을 변경해야할 때 변수의 값만 바꾸면 모든 값이 일괄적으로
+// 수정되기 때문에 유지보수하기 css보다 유리하다.
+
+// 또한 변수 뿐만 아니라 @for @if등 제어문을 사용할 수 있다.
+
+// @if $red != red {
+//     .className {
+//         color: #000
+//     }
+// }
+
+// 2. 네스팅(Nesting)이라는 속성을 사용하면 부모의 이름을 반복적으로 선언하지
+// 않아도 된다. -> 코드가 짧아지고 가독성이 좋아진다.
+
+// ex)
+// .nav li {
+//     padding: 10px;
+// }
+
+// .nav li ul {
+//     padding: 20px;
+// }
+// == >
+// .nav {
+//     @extend .functuibClassname
+//     li{
+//         padding: 10px;
+//     }
+//     ul{
+//         padding: 20px;
+//     }
+// }
+// %functuibClassname {
+//     border: 1px solid #000;
+// }
+// 이런 식으로 계속 중괄호를 사용하면서 스타일을 선언하면 전체적인 css 코드도 짧아지고 계층 적인 구조로 인해
+// 한눈에 보기 쉬워 유지보수할 때 수정하기도 용이하다.
+
+// 3. 함수 형식으로 사용
+// @extend 를 사용하여 %로 클래스를 상속 받아서 사용할 수 있다.
+// nav 밑에 정의한 classname를 nav 안에  @extend로 상속 후 사용할 수 있다.
+// 또한 @mixin 속성으로도 사용할 수 있는데
+// mixin으로 선언 한 뒤 펑션에 변수를 받아서 사용한다.
+
+// @mixin test($fontSize = 40px) {
+//     font-size: $fontSize;
+// }
+// . div { @include test(30px)}
+
+// 4. 연산자를 사용할 수 있다.
+// +-*/% 등 스타일 안에 연산자를 사용할 수 있다
+
+// div {
+//     float: right;
+//     width: 300px / 100px * 200;
+// }
+
+// scss를 사용하지 않아도 스타일을 만드는데 지장은 없지만 scss를 씀으로써
+// 큰 단위의 작업에서 css보다 더 유지보수하기 유리하다.
+
+// 설치
+// npm install -g node-sass
+// vux
+// mixin -- 다음주 월요일까지 샘플 코드랑 정리

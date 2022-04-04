@@ -1,0 +1,90 @@
+.board_wrap {
+  // width: 1000px;
+  // margin: 100px auto;
+  // border: 1px solid gray;
+}
+
+.board_title {
+  // margin-bottom: 30px;
+}
+
+.board_title p {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.board_tile strong {
+  font-size: 3rem;
+  /* rem은 최상위(html태그) 값에 곱한 값을 의미한다. */
+}
+
+.board_info {
+  width: 100%;
+//   border-top: 2px solid #000;
+}
+
+.board_info .title {
+  padding: 20px 15px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 2rem;
+}
+
+.board_info .info {
+  padding: 15px;
+  border-bottom: 1px solid #999;
+  font-size: 0;
+}
+
+.board_info .info dl {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.board_info .info dl:first-child {
+    // 위에 dl 태그에 대해 모두 패딩 값을 줬지만 첫 번째 dl는 왼쪽에 정렬 되는 것이 
+    // 맞기 때문에 첫 번째 dl만 padding-left를 0으로 준다.
+    padding-left: 0;
+  }
+
+.board_info .info dl::before {
+    // ::before 또는 ::after는 가상요소라고 하며 css 상에서 대상의 앞이나 뒤에 내용을 덫붙일 때 사용한다.
+    // ex) dl::before { content: "★" }을 하면 해당 범위의 dl 앞에 ★이 붙어서 나온다.
+    // 주로 구분선 같은 것을 줄 때 사용한다 | d
+    // 가상 요소를 사용할려면 content를 빈값으로라도 정의를 해둬야 한다.
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 100%;
+    // height: 13px;
+    background: #000;
+}
+
+.board_info .info dl:first-child:before {
+    display: none;
+}
+.board_info .info dl dt,
+.board_info .info dl dd {
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.board_info .info dl dt {
+
+}
+
+.board_info .info dl dd {
+    margin-left: 10px;
+    color: #777;
+}
+
+.board_info .cont {
+    padding: 15px;
+    border-bottom: 1px dashed gray;
+    line-height: 160%;
+    font-size: 0.8rem;
+    min-height: 300px;
+}

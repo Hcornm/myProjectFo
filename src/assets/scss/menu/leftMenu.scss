@@ -1,0 +1,154 @@
+.leftMenu_wrap {
+    /* width: 200px;
+      height: 800px;
+      background: green;
+      position: absolute;
+      margin: 40px auto;
+      margin-left: 100px; */
+    width: 250px;
+    height: 2000px;
+    /* background: green; */
+    position: relative;
+    float: left;
+    margin-top: 40px;
+    font-size: 0;
+    margin-left: 20px;
+    border-top: 2px solid #000;
+  }
+.leftMenu_wrap a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+  .leftMenu_title {
+    width: 100%;
+  }
+  .leftMenu_title > div {
+    font-size: 0px;
+  }
+  
+  .leftMenu_title > div > div {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .leftMenu_title .leftMenu_cafeInfo {
+    width: 50%;
+  }
+  
+  .leftMenu_title .leftMenu_userInfo {
+    width: 50%;
+  }
+  
+  .leftMenu_list {
+    width: 100%;
+    border-top: 2px solid #ddd;
+  }
+  
+  .leftMenu_list > div {
+    font-size: 0px;
+    
+  }
+  
+  .leftMenu_list > div > div {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .leftMenu_list .key {
+    text-align: left;
+    width: 50%;
+  }
+  .leftMenu_list .value {
+    width: 50%;
+    text-align: right;
+  }
+
+  .leftMenu_category{
+    width: 100%;
+    border-top: 2px solid #ddd;
+  }
+
+  .leftMenu_category > div {
+    font-size: 0px;
+    
+  }
+  
+  .leftMenu_category > div > div {
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+
+// 버튼
+  .leftMenu_btn_wrap {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0;
+}
+
+.leftMenu_btn_wrap a {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+
+.leftMenu_btn_wrap a:first-child{
+    margin-left: 0;
+}
+
+.leftMenu_btn_wrap a.on {
+    /**해당 클래스가 활성화 되었을 때 */
+    background: #000;
+    color: #fff;
+}
+
+.leftMenu_category_list {
+    margin-top: 10px;
+    width: 100%;
+    border-top: 2px solid #ddd;
+}
+
+.leftMenu_category_list > div {
+    font-size: 0px;
+}
+
+.leftMenu_category_list > div > div{
+    display: inline-block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 0.8rem;
+    // text-align: center;
+}
+
+.leftMenu_category_list .key {
+    font-weight: bold;
+    font-size: 1rem;
+    padding-left: 5px;
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid #ddd;
+}
+.leftMenu_category_list .value {
+    font-size: 0.9rem;
+    padding-left: 10px;
+    width: 100%;
+    float: left;
+}
+
+
+

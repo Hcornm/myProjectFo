@@ -1,0 +1,82 @@
+.board_wrap {
+    // width: 1000px;
+    // margin: 100px auto;
+    width: 860px;
+    margin: 40px auto;
+    position: relative;
+    // float:left;
+    font-size: 0;
+}
+
+.board_title {
+    margin-bottom: 30px;
+}
+
+.board_title p{
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+.board_tile strong {
+    font-size: 3rem; 
+    /* rem은 최상위(html태그) 값에 곱한 값을 의미한다. */
+}
+
+.board_list {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+
+.board_list > div {
+    font-size: 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.board_list > div.top {
+    border-bottom: 1px solid #999;
+}
+
+.board_list > div:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+   display: inline-block;
+   padding: 15px 0;
+   font-size: 0.8rem;
+   text-align: center;
+}
+
+.board_list > div.top > div {
+
+    font-weight: 600;
+
+ }
+
+.board_list .num {
+    width: 10%;
+}
+.board_list .title {
+    width: 50%;
+    text-align: left;
+}
+
+.board_list .top .title {
+    text-align: center;
+}
+.board_list .writer {
+    width: 10%;
+}
+.board_list .date {
+    width: 20%;
+}
+.board_list .count {
+    width: 10%;
+}
+
+.board_list .replyCount {
+    color: red;
+}
+
+
+

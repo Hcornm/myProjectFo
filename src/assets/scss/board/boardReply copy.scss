@@ -1,0 +1,406 @@
+.board_reply_title {
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.board_reply_title p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.board_reply_wrap {
+    width: 100%;
+    // border-bottom: 2px solid #000;
+}
+
+.board_reply {
+    width: 100%;
+}
+
+.board_reply .board_reply_info{
+    padding: 15px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px;
+  width: 95%;
+float: right;
+}
+
+.board_reply .board_reply_info dl {
+    // position: relative; //요거
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_info dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_info dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_info dl:first-child dd a{
+    padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child{
+    padding-right: 0;
+}
+
+
+.board_reply .board_reply_info dd:first-child {
+    margin-left: 1;
+}
+
+.board_reply .board_reply_info dl:last-child{
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.board_reply .board_reply_info dd:last-child{
+    margin-left: 5px;
+}
+.board_reply .board_reply_info dl dt,
+.board_reply .board_reply_info dl dd {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+
+// 답글작성
+.board_reply .board_reply_insert{
+    float: right;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+  border: 2px solid gray;
+  margin-bottom: 15px;
+//   font-size: 0;
+}
+
+.board_reply .board_reply_insert textarea{
+    width: 100%;
+    min-height: 60px;
+}
+
+.board_reply .board_reply_insert dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_insert dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_insert dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_insert dl:first-child dt
+ {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.board_reply .board_reply_insert dl:first-child dd span{
+    font-size: 0.9rem;
+    padding-right: 15px;
+}
+
+
+// 대댓 css
+.board_reply .board_reply_info_re{
+    padding: 15px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px;
+//   font-size: 0;
+width: 90%;
+float: right;
+}
+
+.board_reply .board_reply_info_re dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_info_re dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_info_re dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re dl:first-child dd a{
+    padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child{
+    padding-right: 0;
+}
+
+
+.board_reply .board_reply_info_re dd:first-child {
+    margin-left: 1;
+}
+
+.board_reply .board_reply_info_re dl:last-child{
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.board_reply .board_reply_info_re dd:last-child{
+    margin-left: 5px;
+}
+.board_reply .board_reply_info_re dl dt,
+.board_reply .board_reply_info_re dl dd {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+
+
+// 대댓 답글작성
+.board_reply .board_reply_insert_re{
+    width: 90%;
+    float: right;
+    margin: 0 auto;
+    padding: 15px;
+    border: 2px solid gray;
+    margin-bottom: 15px;
+
+//   font-size: 0;
+}
+
+.board_reply .board_reply_insert_re textarea{
+    width: 100%;
+    min-height: 60px;
+}
+
+.board_reply .board_reply_insert_re dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_insert_re dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_insert_re dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_insert_re dl:first-child dt
+ {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.board_reply .board_reply_insert_re dl:first-child dd span{
+    font-size: 0.9rem;
+    padding-right: 15px;
+}
+
+
+
+
+// 댓글 수정
+.board_reply .board_reply_update{
+    float: right;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+  border: 2px solid red;
+  margin-bottom: 15px;
+//   font-size: 0;
+}
+
+.board_reply .board_reply_update textarea{
+    width: 100%;
+    min-height: 60px;
+}
+
+.board_reply .board_reply_update dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_update dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_update dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_update dl:first-child dt
+ {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.board_reply .board_reply_update dl:first-child dd span{
+    font-size: 0.9rem;
+    padding-right: 15px;
+}
+
+
+//
+// 대댓 css
+.board_reply .board_reply_info_re1{
+    padding: 15px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px;
+//   font-size: 0;
+width: 90%;
+float: right;
+}
+
+.board_reply .board_reply_info_re1 dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re1 dl:first-child dd a{
+    padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child{
+    padding-right: 0;
+}
+
+
+.board_reply .board_reply_info_re1 dd:first-child {
+    margin-left: 1;
+}
+
+.board_reply .board_reply_info_re1 dl:last-child{
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.board_reply .board_reply_info_re1 dd:last-child{
+    margin-left: 5px;
+}
+.board_reply .board_reply_info_re1 dl dt,
+.board_reply .board_reply_info_re1 dl dd {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+// 대댓 css
+.board_reply .board_reply_info_re2{
+    padding: 15px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px;
+//   font-size: 0;
+width: 85%;
+float: right;
+}
+
+.board_reply .board_reply_info_re2 dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re2 dl:first-child dd a{
+    padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child{
+    padding-right: 0;
+}
+
+
+.board_reply .board_reply_info_re2 dd:first-child {
+    margin-left: 1;
+}
+
+.board_reply .board_reply_info_re2 dl:last-child{
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.board_reply .board_reply_info_re2 dd:last-child{
+    margin-left: 5px;
+}
+.board_reply .board_reply_info_re2 dl dt,
+.board_reply .board_reply_info_re2 dl dd {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+// 대댓 css
+.board_reply .board_reply_info_re3{
+    padding: 15px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 15px;
+//   font-size: 0;
+width: 80%;
+float: right;
+}
+
+.board_reply .board_reply_info_re3 dl {
+    position: relative;
+    // display: inline-block;
+    padding-left: 0;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child {
+    font-weight: bold;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child dd{
+    float: right;
+    padding-right: 15px;
+}
+
+.board_reply .board_reply_info_re3 dl:first-child dd a{
+    padding-right: 15px;
+}
+.board_reply .board_reply_info dl:first-child dd a:last-child{
+    padding-right: 0;
+}
+
+
+.board_reply .board_reply_info_re3 dd:first-child {
+    margin-left: 1;
+}
+
+.board_reply .board_reply_info_re3 dl:last-child{
+    font-size: 0.5rem;
+    color: gray;
+}
+
+.board_reply .board_reply_info_re3 dd:last-child{
+    margin-left: 5px;
+}
+.board_reply .board_reply_info_re3 dl dt,
+.board_reply .board_reply_info_re3 dl dd {
+    display: inline-block;
+    font-size: 0.9rem;
+}

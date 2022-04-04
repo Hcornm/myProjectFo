@@ -1,0 +1,24 @@
+@import './board/boardList.scss';
+@import './board/boardInfo.scss';
+@import './board/boardReply.scss';
+@import './board/boardButton.scss';
+@import './board/paging.scss';
+
+@import './menu/leftMenu.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
