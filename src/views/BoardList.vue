@@ -31,7 +31,8 @@
       </div>
       <!-- <Paging></Paging> -->
       <div class="bt_wrap">
-        <a @click="boardInsert" class="on">등록</a>
+        <!-- <a @click="boardInsert" class="on">등록</a> -->
+        <a @click="pageBind" class="on">등록</a>
         <a @click="replyInsert" class="on">댓글등록</a>
         <!-- <a href="#">수정</a> -->
       </div>
@@ -121,6 +122,12 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+    // 등록 페이지로 이동
+    pageBind: function () {
+      this.$router.push({
+        name: "boardCreate",
+      });
     },
     replyInsert: function () {
       console.log(this.replyInsertParam, "this.replyInsertParam");

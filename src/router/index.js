@@ -9,6 +9,7 @@ import BoardInfo2 from "../views/BoardInfo2.vue";
 import BoardInfo4 from "../views/BoardInfo4.vue";
 import BoardInfo5 from "../views/BoardInfo5.vue";
 import Login from "../views/Login.vue";
+import BoardCreate from "../views/BoardCreate.vue";
 
 Vue.use(VueRouter);
 
@@ -68,6 +69,11 @@ const routes = [
         component: BoardInfo5,
         props: true,
       },
+      {
+        path: "/boardCreate",
+        name: "boardCreate",
+        component: BoardCreate,
+      }
     ],
   },
 ];
