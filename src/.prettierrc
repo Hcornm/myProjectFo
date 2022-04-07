@@ -1,8 +1,12 @@
 {
-  "formatOnSave": true,
-  "printWidth": 200,
-  "useTabs": false,
-  "trailingComma": "all",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "singleQuote": true,
   "semi": true,
-  "tabWidth": 2
+  "trailingComma": "all",
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 200,
+  "eslintIntegration": true,
+  "formatOnSave": true
 }
