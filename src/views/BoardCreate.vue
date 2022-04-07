@@ -8,10 +8,20 @@
       <!-- 글작성 게시판 body -->
       <div class="board_create_wrap">
         <div class="board_create">
-          dsadasdas
-          <input multiple @change="onInputFile" type="file" id="file" class="inputfile" />
-          <div @click="uploadFile">전송</div>
+          <div class="title">
+            <span>제목</span>
+            <input type="text" v-model="title" />
+          </div>
+          <div class="info">
+            <textarea v-model="content"></textarea>
+          </div>
         </div>
+      </div>
+      <div class="bt_wrap">
+        <!-- <a @click="boardInsert" class="on">등록</a> -->
+        <a @click="createBoard" class="on">등록</a>
+        <a @click="pageBind" class="on">취소</a>
+        <!-- <a href="#">수정</a> -->
       </div>
       <!-- 글작성 게시판 body -->
     </div>
@@ -21,33 +31,40 @@
 export default {
   data() {
     return {
-      image: "",
+      title: '',
+      content: '',
     };
   },
   created() {},
   methods: {
-    onInputFile: function (e) {
-      var file = e.target.files;
-      let url = URL.createObjectURL(file[0]);
-      this.image = url;
-      console.log(file, "file");
-      console.log(url, "url");
-      console.log(this.image, "image");
-
+    // 등록 파라미터
+    createParam: function () {
+      return {
+        title: this.title,
+        content: this.content,
+        boardType: 'BEST',
+        writer: this.$store.state.test.loingUserInfo.username,
+        writeDate: new Date().getTime(),
+      };
+    },
+    // 게시글 작성
+    createBoard: function () {
+      if (!this.$store.state.test.loingUserInfo.isLogin) return alert('로그인 해주세요');
       this.$axios
-        .post("http://localhost:8080/board/fileUpdate", file)
+        .post('http://localhost:8080/board/boardInsert', this.createParam())
         .then((result) => {
           if (result.status === 200) {
-            console.log(result, "result");
+            console.log(result, result);
           }
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    uploadFile: function () {
-      const formData = new FormData();
-      formData.append();
+    pageBind: function () {
+      this.$router.push({
+        name: 'boardList',
+      });
     },
   },
 };
@@ -59,5 +76,17 @@ export default {
   font-size: 1.2rem;
   width: 100%;
   border: 1px solid #ddd;
+}
+
+.board_create .title {
+  padding: 20px 15px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 2rem;
+}
+
+.board_create .info {
+  padding: 15px;
+  border-bottom: 1px solid #999;
+  font-size: 2rem;
 }
 </style>
