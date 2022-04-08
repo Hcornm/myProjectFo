@@ -26,7 +26,7 @@
 
           <div class="board_reply_insert">
             <dl>
-              <dt>{{ $store.state.test.loingUserInfo.username || "닉네임" }}</dt>
+              <dt>{{ $store.state.test.loingUserInfo.username || '닉네임' }}</dt>
               <dd>
                 <span><a @click="content = ''">취소</a></span
                 ><span><a @click="insertReReplyNew">등록</a></span>
@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import validate from "@/mixin/validate";
-import { Board, Reply } from "@/resource/entity";
-import { BoardInfoDetail, HmReplyCom5 } from "@/components/board";
-import { mapGetters, mapMutations } from "vuex";
+import validate from '@/mixin/validate';
+import { Board, Reply } from '@/resource/entity';
+import { BoardInfoDetail, HmReplyCom5 } from '@/components/board';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   components: {
@@ -67,8 +67,8 @@ export default {
   },
   data() {
     return {
-      umm: "<<",
-      ummm: "<",
+      umm: '<<',
+      ummm: '<',
       // 게시판 클래스
       board: {
         class: new Board(),
@@ -79,7 +79,7 @@ export default {
         data: [],
       },
       flag: false,
-      content: "",
+      content: '',
     };
   },
   mixins: [validate],
@@ -93,17 +93,45 @@ export default {
     // 해당 모듈의 namespaced만 선언해서 불러 올 수 있다.
     // mapGetters는 Vuex 에 내장된 helper 함수이다. 코드를 가독성 있게 해준다.
     // 스프레드 연산자를 통해 선언해야 computed에 다른 메서드들도 선언해서 사용할 수 있음
-    ...mapGetters("test", {
-      loingUserInfo: "loingUserInfo",
+    ...mapGetters('test', {
+      loingUserInfo: 'loingUserInfo',
     }),
     // loginUserInfo() {
     //   return this.$store.getters.loingUserInfo;
     // },
   },
   methods: {
-    ...mapMutations("test", {
-      userInfo: "userInfo", // this.userInfo() 메소드 호출 시 this.$store.commit('userInfo') 호출
+    ...mapMutations('test', {
+      userInfo: 'userInfo', // this.userInfo() 메소드 호출 시 this.$store.commit('userInfo') 호출
     }),
+    // 객체를 리턴하는 함수를 만들 때 임시 객체를 선언하고 값들을 할당하는 식으로 코드를 작성할 경우 좋지 않다.
+    // 타인이 해당 객체에 접근해 값을 바꾸거나 새로운 로직을 추가할 수도 있고 디버깅시 추적이 어렵다.
+    // 바로 객체타입으로 리턴해주면 조금 더 직관적이로 클린한 코드가 될 수 있다.
+
+    // 안 좋은예
+    // 임시변수를 사용해서 내부에서 로직들을 마음 껏 돌릴 우려가 있고 ex) for문 등 파라미터로 활용하기 위한 객체인데 그 의미가 모호해질 수 있다.
+    insertParam2: function () {
+      let insertParamObject = {}; // 이것이 임시 변수이며 임시변수의 사용은 지양하는 것이 좋다.
+      insertParamObject.boardId = this.boardId;
+      insertParamObject.content = this.content;
+      insertParamObject.writer = this.$store.state.test.loingUserInfo.username;
+      insertParamObject.writeDate = new Date().getTime();
+      insertParamObject.parentReplyId = 0;
+      insertParamObject.sort = 0;
+      insertParamObject.depth = 0;
+      insertParamObject.isParent = true;
+      insertParamObject.createUserId = this.$store.state.test.loingUserInfo.memberId;
+
+      // 예를 들면 여기서 for문이나 if문을 돌리는 등 이상한 짓을 타인이 할 수가있다.
+      // if (insertParamObject.isParent) insertParamObject.writer = 'ㅎㅎㅎ';
+      // for (let i = 0; i < ) {
+
+      // }
+      return insertParamObject;
+    },
+
+    // 좋은 예
+    // 임시변수를 사용하지 않고 바로 객체로 리턴해준다.
     // 최상위 부모 등록 파라미터
     insertParam: function () {
       return {
@@ -147,11 +175,11 @@ export default {
         return false;
       } else {
         this.$axios
-          .post("http://localhost:8080/hmReply/hmReplyInsert", this.insertParam())
+          .post('http://localhost:8080/hmReply/hmReplyInsert', this.insertParam())
           .then((result) => {
             if (result.status === 200) {
               console.log(result);
-              this.content = "";
+              this.content = '';
               // 게시판 상세 조회
               this.getBoardInfo();
               // 댓글 리스트 조회
@@ -170,7 +198,7 @@ export default {
       } else {
         let params = this.insertReReplyParam(replyObj, content);
         this.$axios
-          .post("http://localhost:8080/hmReply/hmReplyInsert", params)
+          .post('http://localhost:8080/hmReply/hmReplyInsert', params)
           .then((result) => {
             if (result.status === 200) {
               console.log(result);
@@ -191,7 +219,7 @@ export default {
       } else {
         let params = this.insertReReplyParam(replyObj, content);
         this.$axios
-          .post("http://localhost:8080/hmReply/hmReplyInsert", params)
+          .post('http://localhost:8080/hmReply/hmReplyInsert', params)
           .then((result) => {
             if (result.status === 200) {
               console.log(result);
@@ -210,10 +238,10 @@ export default {
     updateReply: function (replyObj) {
       let params = this.updateParam(replyObj);
       this.$axios
-        .put("http://localhost:8080/hmReply/hmReplyUpdate", params)
+        .put('http://localhost:8080/hmReply/hmReplyUpdate', params)
         .then((result) => {
           if (result.status === 200) {
-            alert("댓글이 수정되었습니다.");
+            alert('댓글이 수정되었습니다.');
             this.getReplyList();
             console.log(result, result);
           }
@@ -225,12 +253,12 @@ export default {
     // 게시글 상세 조회
     getBoardInfo: function () {
       this.$axios
-        .get("http://localhost:8080/board/boardInfo", { params: { boardId: this.boardId } })
+        .get('http://localhost:8080/board/boardInfo', { params: { boardId: this.boardId } })
         .then((result) => {
           if (result.status === 200) {
-            console.log(result, "result");
+            console.log(result, 'result');
             this.board = { ...result.data };
-            console.log(this.board, "this.board");
+            console.log(this.board, 'this.board');
           }
         })
         .catch((err) => {
@@ -241,12 +269,12 @@ export default {
     getReplyList: function () {
       this.$axios
         // .get("http://localhost:8080/reply/replyList", { params: { boardId: this.boardId } })
-        .get("http://localhost:8080/hmReply/hmReplyList2", { params: { boardId: this.boardId } })
+        .get('http://localhost:8080/hmReply/hmReplyList2', { params: { boardId: this.boardId } })
         .then((result) => {
           if (result.status === 200) {
             this.hmReply = { ...result.data };
             this.flag = false;
-            console.log(this.hmReply, "this.hmReply");
+            console.log(this.hmReply, 'this.hmReply');
           }
         })
         .catch((err) => {
@@ -260,7 +288,7 @@ export default {
         .delete(`http://localhost:8080/hmReply/hmReplyDelete/${hmReplyId}`)
         .then((result) => {
           if (result.status === 200) {
-            alert("댓글이 삭제되었습니다.");
+            alert('댓글이 삭제되었습니다.');
             this.getReplyList();
             console.log(result, result);
           }
