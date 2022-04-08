@@ -41,15 +41,15 @@
 </template>
 
 <script>
-import { Board } from "@/resource/entity";
-import common from "../mixin/common";
+import { Board } from '@/resource/entity';
+import common from '../mixin/common';
 
 export default {
   props: {
     boardType: {
       type: String,
       required: false,
-      default: "BEST",
+      default: 'BEST',
     },
   },
   mixins: [common],
@@ -70,10 +70,10 @@ export default {
     // 등록 파라미터
     insertParam: function () {
       return {
-        title: "등록 테스트",
-        content: "등록 테스트 중입니다",
-        boardType: "BEST",
-        writer: "어드민",
+        title: '등록 테스트',
+        content: '등록 테스트 중입니다',
+        boardType: 'BEST',
+        writer: '어드민',
         writeDate: new Date().getTime(),
       };
     },
@@ -81,20 +81,20 @@ export default {
     replyInsertParam: function () {
       return {
         // pId: 0,
-        content: "등록 테스트 중입니다",
+        content: '등록 테스트 중입니다',
         sort: 0,
-        useYn: "Y",
+        useYn: 'Y',
       };
     },
     // 게시글 리스트 조회
     getBoardList: function () {
       this.$axios
-        .get("http://localhost:8080/board/boardList", { params: { boardType: this.boardType } })
+        .get('http://localhost:8080/board/boardList', { params: { boardType: this.boardType } })
         .then((result) => {
           if (result.status === 200) {
-            console.log(result, "result");
+            console.log(result, 'result');
             this.board = { ...result.data };
-            console.log(this.board, "this.board");
+            console.log(this.board, 'this.board');
           }
         })
         .catch((err) => {
@@ -111,9 +111,9 @@ export default {
     // 게시글 등록
     // TODO 추후 등록 페이지  추가 필요
     boardInsert: function () {
-      console.log(this.insertParam, "this.insertParam");
+      console.log(this.insertParam, 'this.insertParam');
       this.$axios
-        .post("http://localhost:8080/board/boardInsert", this.insertParam())
+        .post('http://localhost:8080/board/boardInsert', this.insertParam())
         .then((result) => {
           if (result.status === 200) {
             console.log(result, result);
@@ -126,13 +126,13 @@ export default {
     // 등록 페이지로 이동
     pageBind: function () {
       this.$router.push({
-        name: "boardCreate",
+        name: 'boardCreate',
       });
     },
     replyInsert: function () {
-      console.log(this.replyInsertParam, "this.replyInsertParam");
+      console.log(this.replyInsertParam, 'this.replyInsertParam');
       this.$axios
-        .post("http://localhost:8080/myReply/insertMyReply", this.replyInsertParam())
+        .post('http://localhost:8080/myReply/insertMyReply', this.replyInsertParam())
         .then((result) => {
           if (result.status === 200) {
             console.log(result, result);
