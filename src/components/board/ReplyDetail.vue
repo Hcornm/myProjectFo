@@ -82,51 +82,7 @@ export default {
       required: false,
       default: () => [],
     },
-    // activeReply: {
-    //   type: Boolean,
-    //   required: false,
-    //   default: false,
-    // },
-    // activeUpdate: {
-    //   type: Boolean,
-    //   required: false,
-    //   default: false,
-    // },
-    // sort: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // realSort: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // depth: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // parentId: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // replyId: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // groupId: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
-    // content: {
-    //   type: Number,
-    //   required: false,
-    //   default: 0,
-    // },
+
     replyObj: {
       type: Object,
       required: true,
@@ -136,31 +92,31 @@ export default {
   methods: {
     // 수정
     replyUpdate: function () {
-      this.$emit("replyUpdate");
+      this.$emit('replyUpdate');
     },
     // 대댓 등록
     replyInsertRe: function () {
-      this.$emit("replyInsertRe");
+      this.$emit('replyInsertRe');
     },
     // 등록
     replyInsert: function () {
-      this.$emit("replyInsert");
+      this.$emit('replyInsert');
     },
     // 등록 취소
     replyCancel: function () {
-      this.$emit("replyCancel");
+      this.$emit('replyCancel');
     },
     // 수정 영역 활성화
     openUpdateBox: function (replyIndex, replyItem) {
-      this.$emit("openUpdateBox", replyIndex, replyItem);
+      this.$emit('openUpdateBox', replyIndex, replyItem);
     },
     // 대댓글 등록 영역 활성화
     openInsertBox: function (replyIndex, replyItem) {
-      this.$emit("openInsertBox", replyIndex, replyItem);
+      this.$emit('openInsertBox', replyIndex, replyItem);
     },
     // 댓글 삭제
     replyDelete: function (replyItem) {
-      this.$emit("replyDelete", replyItem);
+      this.$emit('replyDelete', replyItem);
     },
   },
 };
