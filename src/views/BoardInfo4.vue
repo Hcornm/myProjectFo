@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import { Board, Reply } from "@/resource/entity";
-import { BoardInfoDetail, HmReplyCom4 } from "@/components/board";
+import { Board, Reply } from '@/resource/entity';
+import { BoardInfoDetail, HmReplyCom4 } from '@/components/board';
 
 export default {
   components: {
@@ -75,8 +75,8 @@ export default {
   },
   data() {
     return {
-      umm: "<<",
-      ummm: "<",
+      umm: '<<',
+      ummm: '<',
       // 게시판 클래스
       board: {
         class: new Board(),
@@ -93,7 +93,7 @@ export default {
       parentId: 0,
       replyId: 0,
       groupId: 0,
-      content: "",
+      content: '',
       // reContent: "",
     };
   },
@@ -120,12 +120,12 @@ export default {
         parentId: 0, // 부모id
         replyId: 0, // 본인id
         groupId: 0, // 그룹id
-        content: "", // 내용
+        content: '', // 내용
       };
     },
     a: function () {
       this.$axios
-        .post("http://localhost:8080/hmReply/hmReplyInsert", this.aaram())
+        .post('http://localhost:8080/hmReply/hmReplyInsert', this.aaram())
         .then((result) => {
           if (result.status === 200) {
             console.log(result);
@@ -141,7 +141,7 @@ export default {
       return {
         boardId: this.boardId,
         content: this.replyObj.content,
-        writer: "어드민",
+        writer: '어드민',
         writeDate: new Date().getTime(),
         depth: this.replyObj.depth,
         parentId: this.replyObj.parentId,
@@ -154,7 +154,7 @@ export default {
       return {
         replyId: this.replyObj.replyId,
         content: this.replyObj.content,
-        witer: "어드민",
+        witer: '어드민',
         writeDate: new Date().getTime(),
         sort: 0,
         parentReplyId: 15,
@@ -165,7 +165,7 @@ export default {
       return {
         boardId: this.boardId,
         content: this.content,
-        writer: "어드민",
+        writer: '어드민',
         writeDate: new Date().getTime(),
         parentReplyId: 0,
         sort: 0,
@@ -176,7 +176,7 @@ export default {
       return {
         boardId: this.boardId,
         content: replyObj.content,
-        writer: "어드민",
+        writer: '어드민',
         writeDate: new Date().getTime(),
         parentReplyId: replyObj.hmReplyId,
         sort: 0,
@@ -185,11 +185,11 @@ export default {
     },
     insertReReplyNew: function () {
       this.$axios
-        .post("http://localhost:8080/hmReply/hmReplyInsert", this.aaram())
+        .post('http://localhost:8080/hmReply/hmReplyInsert', this.aaram())
         .then((result) => {
           if (result.status === 200) {
             console.log(result);
-            this.content = "";
+            this.content = '';
             // 게시판 상세 조회
             this.getBoardInfo();
             // 댓글 리스트 조회
@@ -203,10 +203,10 @@ export default {
     // 대댓글 달기
     insertReReply: function (replyObj) {
       let ab = this.aaram2(replyObj);
-      console.log(ab, "ab");
+      console.log(ab, 'ab');
 
       this.$axios
-        .post("http://localhost:8080/hmReply/hmReplyInsert", ab)
+        .post('http://localhost:8080/hmReply/hmReplyInsert', ab)
         .then((result) => {
           if (result.status === 200) {
             console.log(result);
@@ -223,12 +223,12 @@ export default {
     // 게시글 상세 조회
     getBoardInfo: function () {
       this.$axios
-        .get("http://localhost:8080/board/boardInfo", { params: { boardId: this.boardId } })
+        .get('http://localhost:8080/board/boardInfo', { params: { boardId: this.boardId } })
         .then((result) => {
           if (result.status === 200) {
-            console.log(result, "result");
+            console.log(result, 'result');
             this.board = { ...result.data };
-            console.log(this.board, "this.board");
+            console.log(this.board, 'this.board');
           }
         })
         .catch((err) => {
@@ -238,12 +238,11 @@ export default {
     // 댓글 리스트 조회
     getReplyList: function () {
       this.$axios
-        // .get("http://localhost:8080/reply/replyList", { params: { boardId: this.boardId } })
-        .get("http://localhost:8080/hmReply/hmReplyList2", { params: { boardId: this.boardId } })
+        .get('http://localhost:8080/hmReply/hmReplyList2', { params: { boardId: this.boardId } })
         .then((result) => {
           if (result.status === 200) {
             this.hmReply = { ...result.data };
-            console.log(this.hmReply, "this.hmReply");
+            console.log(this.hmReply, 'this.hmReply');
           }
         })
         .catch((err) => {
@@ -256,7 +255,7 @@ export default {
         .delete(`http://localhost:8080/hmReply/hmReplyDelete/${replyItem.hmReplyId}`)
         .then((result) => {
           if (result.status === 200) {
-            alert("댓글이 삭제되었습니다.");
+            alert('댓글이 삭제되었습니다.');
             this.getReplyList();
             console.log(result, result);
           }
@@ -272,12 +271,11 @@ export default {
       this.replyObj.parentId = 0;
       this.replyObj.realSort = this.replyObj.realSort === 0 ? 0 : this.replyObj.realSort + 1;
       this.$axios
-        .post("http://localhost:8080/reply/replyInsert", this.replyInsertParam())
+        .post('http://localhost:8080/reply/replyInsert', this.replyInsertParam())
         .then((result) => {
           if (result.status === 200) {
             this.replyObj = this.initreplyObj();
             this.getReplyList();
-            console.log(result, result);
           }
         })
         .catch((err) => {
@@ -289,12 +287,11 @@ export default {
     replyInsertRe: function () {
       this.replyObj.realSort = this.replyObj.realSort === 0 ? 1 : this.replyObj.realSort + 1;
       this.$axios
-        .post("http://localhost:8080/reply/replyInsert", this.replyInsertParam())
+        .post('http://localhost:8080/reply/replyInsert', this.replyInsertParam())
         .then((result) => {
           if (result.status === 200) {
             this.replyObj = this.initreplyObj();
             this.getReplyList();
-            console.log(result, result);
           }
         })
         .catch((err) => {
@@ -303,14 +300,13 @@ export default {
     },
     // 댓글 삭제
     replyDelete: function (replyItem) {
-      console.log("dasdas");
+      console.log('dasdas');
       this.$axios
         .delete(`http://localhost:8080/reply/replyDelete/${replyItem.replyId}`)
         .then((result) => {
           if (result.status === 200) {
-            alert("댓글이 삭제되었습니다.");
+            alert('댓글이 삭제되었습니다.');
             this.getReplyList();
-            console.log(result, result);
           }
         })
         .catch((err) => {
@@ -319,14 +315,13 @@ export default {
     },
     // 댓글 수정
     replyUpdate: function () {
-      console.log(this.replyUpdateParam(), "replyUpdateParam");
+      console.log(this.replyUpdateParam(), 'replyUpdateParam');
       this.$axios
-        .put("http://localhost:8080/reply/replyUpdate", this.replyUpdateParam())
+        .put('http://localhost:8080/reply/replyUpdate', this.replyUpdateParam())
         .then((result) => {
           if (result.status === 200) {
             this.replyObj = this.initreplyObj();
             this.getReplyList();
-            console.log(result, result);
           }
         })
         .catch((err) => {
@@ -337,7 +332,7 @@ export default {
     openInsertBox: function (replyIndex, replyItem) {
       this.replyObj.activeUpdate = false;
       this.replyObj.activeReply = true;
-      this.replyObj.content = "";
+      this.replyObj.content = '';
       this.replyObj.sort = replyIndex;
       this.replyObj.depth = replyItem.depth + 1;
       this.replyObj.groupId = replyItem.groupId;
@@ -355,7 +350,7 @@ export default {
     // 댓글 취소
     replyCancel: function () {
       this.replyObj.sort = 0;
-      this.replyObj.content = "";
+      this.replyObj.content = '';
       this.replyObj.activeUpdate = false;
       this.replyObj.activeReply = false;
     },

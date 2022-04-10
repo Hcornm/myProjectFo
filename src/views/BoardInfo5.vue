@@ -222,7 +222,6 @@ export default {
           .post('http://localhost:8080/hmReply/hmReplyInsert', params)
           .then((result) => {
             if (result.status === 200) {
-              console.log(result);
               // 게시판 상세 조회
               this.getBoardInfo();
               // 댓글 리스트 조회
@@ -258,7 +257,6 @@ export default {
           if (result.status === 200) {
             console.log(result, 'result');
             this.board = { ...result.data };
-            console.log(this.board, 'this.board');
           }
         })
         .catch((err) => {
