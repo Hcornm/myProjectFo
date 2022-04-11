@@ -182,6 +182,13 @@ export default {
               this.content = '';
               // 게시판 상세 조회
               this.getBoardInfo();
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .then((result) => {
+            if (result.status === 200) {
               // 댓글 리스트 조회
               this.getReplyList();
             }

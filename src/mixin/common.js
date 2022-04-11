@@ -21,6 +21,7 @@ export default {
         params: { boardId },
       });
     },
+    // 로그인
     loginPageBind: function () {
       this.$router.push({
         name: "login",
