@@ -2,8 +2,14 @@ export default {
   methods: {
     isLogin: function () {
       if (!this.$store.state.test.loingUserInfo.isLogin) {
-        alert("로그인 후 작성할 수 있습니다");
-        return false;
+        if (confirm('로그인 후 작성할 수 있습니다 \n로그인하시겠습니까?')) {
+          // 로그인 페이지로 이동
+          this.$router.push({
+            name: 'login',
+          });
+        } else {
+          return false;
+        }
       } else {
         return true;
       }
