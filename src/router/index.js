@@ -1,15 +1,11 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 // import Main from "../views/Main.vue";
-import MainLayout from "../components/layout/MainLayout.vue";
-import BoardList from "../views/BoardList.vue";
-import BoardInfo from "../views/BoardInfo.vue";
-import BoardInfoHM from "../views/BoardInfoHM.vue";
-import BoardInfo2 from "../views/BoardInfo2.vue";
-import BoardInfo4 from "../views/BoardInfo4.vue";
-import BoardInfo5 from "../views/BoardInfo5.vue";
-import Login from "../views/Login.vue";
-import BoardCreate from "../views/BoardCreate.vue";
+import MainLayout from '../components/layout/MainLayout.vue';
+import BoardList from '../views/BoardList.vue';
+import BoardInfo from '../views/BoardInfo.vue';
+import Login from '../views/Login.vue';
+import BoardCreate from '../views/BoardCreate.vue';
 
 Vue.use(VueRouter);
 
@@ -20,8 +16,8 @@ const routes = [
   //   component: Main,
   // },
   {
-    path: "/",
-    name: "MainLayout",
+    path: '/',
+    name: 'MainLayout',
     component: MainLayout,
     children: [
       // {
@@ -30,56 +26,32 @@ const routes = [
       //   component: BoardList,
       // },
       {
-        path: "/",
-        name: "login",
+        path: '/',
+        name: 'login',
         component: Login,
       },
       {
-        path: "/list",
-        name: "boardList",
+        path: '/list',
+        name: 'boardList',
         component: BoardList,
       },
       {
-        path: "/boardInfo/:boardId",
-        name: "boardInfo",
+        path: '/BoardInfo/:boardId',
+        name: 'boardInfo',
         component: BoardInfo,
         props: true,
       },
       {
-        path: "/boardInfoHM/:boardId",
-        name: "boardInfoHM",
-        component: BoardInfoHM,
-        props: true,
-      },
-      {
-        path: "/BoardInfo2/:boardId",
-        name: "boardInfo2",
-        component: BoardInfo2,
-        props: true,
-      },
-      {
-        path: "/BoardInfo4/:boardId",
-        name: "boardInfo4",
-        component: BoardInfo4,
-        props: true,
-      },
-      {
-        path: "/BoardInfo5/:boardId",
-        name: "boardInfo5",
-        component: BoardInfo5,
-        props: true,
-      },
-      {
-        path: "/boardCreate",
-        name: "boardCreate",
+        path: '/boardCreate',
+        name: 'boardCreate',
         component: BoardCreate,
-      }
+      },
     ],
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });
