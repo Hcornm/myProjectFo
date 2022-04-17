@@ -97,7 +97,6 @@
         </div>
 
         <!-- 재귀 호출 -->
-        <!--@insertReply="insertReply"-->
         <hm-reply-com
           v-for="(reSubItem, reSubIndex) in subItem.childReply"
           :key="reSubIndex"
@@ -107,10 +106,7 @@
           @insertReReply="insertReReply"
           @insertReReReply="insertReReReply"
         ></hm-reply-com>
-        <!-- <HmReplyReCom5 v-for="(reSubItem, reSubIndex) in hmReply.childReply" :key="reSubIndex" :reply="reSubItem" class="board_reply_info_re" @insertReReReply="insertReReReply"></HmReplyReCom5> -->
       </div>
-
-      <!-- <HmReplyReCom4 v-for="(reSubItem, reSubIndex) in hmReply.subMenu" :key="reSubIndex" :hmReply="reSubItem"></HmReplyReCom4> -->
     </div>
   </div>
 </template>
@@ -225,35 +221,13 @@ export default {
       this.initActiveUpdate();
       this.activeReply.flag = true;
       this.activeReply.hmReplyId = this.hmReply.hmReplyId;
-      // this.$emit("insertReReply", this.hmReply);
     },
     // 대댓글 작성창 열기
     insertFlagRe: function (subItem) {
-      console.log(subItem.hmReplyId);
-      console.log(this.activeReply);
       this.initActiveUpdate();
       this.activeReply.hmReplyId = subItem.hmReplyId;
       this.activeReply.flag = true;
-      console.log(this.activeReply);
     },
-    // insertReReply: function (depth) {
-    //   console.log(depth, "1");
-    //   console.log(depth);
-    //   this.$emit("insertReReply", this.hmReply, this.content, depth);
-    //   this.content = "";
-    //   // this.activeReply = false;
-    //   this.init();
-    // },
-    // insertReReReply: function (hmReply) {
-    //   console.log("2");
-    //   this.$emit("insertReReReReplyy", hmReply);
-    //   this.init();
-    // },
-    // insertReReReReplyy: function (subItem) {
-    //   console.log(subItem);
-    //   this.$emit("insertReReReReplyy", subItem);
-    //   this.init();
-    // },
   },
 };
 </script>
